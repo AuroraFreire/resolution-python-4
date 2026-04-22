@@ -114,3 +114,12 @@ async def add_item(request: Request, body: ItemBody, background_tasks: Backgroun
 @app.get("/my-info")
 async def my_info(key_info = Depends(verify_api_key)):
     return {"owner": key_info[2], "key_id": key_info[0]}
+
+
+def main():
+    import uvicorn
+    uvicorn.run("resolution_week4_auroraaa.main:app", host="127.0.0.1", port=8000)
+
+
+if __name__ == "__main__":
+    main()
